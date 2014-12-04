@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="dictionary_indexedDB.js"></script>
+    </head>
+    <body onload="app.indexedDB.open()">
+        <div id="head_menu">
+            <a href="index.html" style="float:left">
+                <img src="image/Logo.png" alt="Sign App" width="70px" height="70x" style="border:0">
+            </a>
+            <a href="dictionary.html" style="float:left">
+                <img src="image/Button_Dictionary.png" alt="Dictionary" width="105px" height="47px" style="border:0">
+            </a>
+            <a href="quiz.html" style="float:left">
+                <img src="image/Button_Quiz.png" alt="Quiz" width="105px" height="47px" style="border:0">
+            </a>
+        </div>
+        <div id="word_body">
+            <div id="word_picture" style="float:left">
+                <img src="dictionary_data/pictures/Apple.jpg" alt="Apple" width="200px" height="150x" style="border:0">
+            </div>
+            <div id="word_movie" style="float: left">
+                <video src="dictionary_data/movies/Apple.mp4" alt="Apple" width="200px" height="150x" style="float: right; border:0" controls></video>
+            </div>
+            <div id="word_definition" style="clear:both">
+
+                <input type="button" value="Get word" onclick="app.indexedDB.getWord();">
+
+                <ul>
+                    <li>Name: <span id="wordName"></span></li>
+                    <li>Lexical category:<span id="wordLexicalCategory"></span></li>
+                    <li>Category: <span id="wordCategory"></span></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <p>Copyright © 2015 CCDS (Center for Comunication and Deaf Studies)</p>
+    </footer>
+</html>

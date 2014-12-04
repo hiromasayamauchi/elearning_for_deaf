@@ -1,0 +1,4 @@
+[
+    {"name": "Apple", "initial": "A", "lexical_category": "Noun", "category": "Fruits", "location": "Face", "handshape": "A_handshape", "related_word0": "Orange", "Related_word1": "Red"},
+    {"name": "Baby", "initial": "B", "lexical_category": "Noun", "category": "People", "location": "Face", "handshape": "A_handshape", "related_word0": "Child", "related_word1": "Kid"}
+]

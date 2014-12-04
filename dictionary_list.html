@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="dictionary_indexedDB.js"></script>
+    </head>
+    <body onload="app.indexedDB.open()">
+        <div id="head_menu">
+            <a href="index.html" style="float:left">
+                <img src="image/Logo.png" alt="Sign App" width="70px" height="70x" style="border:0">
+            </a>
+            <a href="dictionary.html" style="float:left">
+                <img src="image/Button_Dictionary.png" alt="Dictionary" width="105px" height="47px" style="border:0">
+            </a>
+            <a href="quiz.html" style="float:left">
+                <img src="image/Button_Quiz.png" alt="Quiz" width="105px" height="47px" style="border:0">
+            </a>
+        </div>
+        <div id="list_body">
+<!--
+            <input type="button" value="Get list" onclick="app.indexedDB.getList();">
+-->
+            <h1><span id='wordInitial'></span></h1>
+            <table id="wordList" width="400px"></table>
+<!--
+            <br/>
+            <a href="dictionary_word.html">Apple</a>
+            <hr/>
+-->
+            <hr/>
+            <u id = 'a' onclick = 'app.indexedDB.getList("A");'>A</u>
+            <u id = 'b' onclick = 'app.indexedDB.getList("B");'>B</u>
+            <u id = 'c' onclick = 'app.indexedDB.getList("C");'>C</u>
+            <u id = 'd' onclick = 'app.indexedDB.getList("D");'>D</u>
+            <u id = 'e' onclick = 'app.indexedDB.getList("E");'>E</u>
+            <u id = 'f' onclick = 'app.indexedDB.getList("F");'>F</u>
+            <u id = 'g' onclick = 'app.indexedDB.getList("G");'>G</u>
+            <u id = 'h' onclick = 'app.indexedDB.getList("H");'>H</u>
+            <u id = 'i' onclick = 'app.indexedDB.getList("I");'>I</u>
+            <u id = 'j' onclick = 'app.indexedDB.getList("J");'>J</u>
+            <u id = 'k' onclick = 'app.indexedDB.getList("K");'>K</u>
+            <u id = 'l' onclick = 'app.indexedDB.getList("L");'>L</u>
+            <u id = 'm' onclick = 'app.indexedDB.getList("M");'>M</u>
+            <u id = 'n' onclick = 'app.indexedDB.getList("N");'>N</u>
+            <br/>
+            <u id = 'o' onclick = 'app.indexedDB.getList("O");'>O</u>
+            <u id = 'p' onclick = 'app.indexedDB.getList("P");'>P</u>
+            <u id = 'q' onclick = 'app.indexedDB.getList("Q");'>Q</u>
+            <u id = 'r' onclick = 'app.indexedDB.getList("R");'>R</u>
+            <u id = 's' onclick = 'app.indexedDB.getList("S");'>S</u>
+            <u id = 't' onclick = 'app.indexedDB.getList("T");'>T</u>
+            <u id = 'u' onclick = 'app.indexedDB.getList("U");'>U</u>
+            <u id = 'v' onclick = 'app.indexedDB.getList("V");'>V</u>
+            <u id = 'w' onclick = 'app.indexedDB.getList("W");'>W</u>
+            <u id = 'x' onclick = 'app.indexedDB.getList("X");'>X</u>
+            <u id = 'y' onclick = 'app.indexedDB.getList("Y");'>Y</u>
+            <u id = 'z' onclick = 'app.indexedDB.getList("Z");'>Z</u>
+        </div>
+    </body>
+    <footer>
+        <p>Copyright © 2015 CCDS (Center for Comunication and Deaf Studies)</p>
+    </footer>
+</html>

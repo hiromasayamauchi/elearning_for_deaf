@@ -1,0 +1,148 @@
+html {
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    margin: 0 auto;
+    padding: 2em 0em 4em 0em;
+    height: 1280px;
+    width: 720px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    color: #545454;
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06); 
+    background-image: url(image/Back_Top.jpg); 
+}
+
+#head_menu {
+    background: transparent;
+    float: left;
+    height: 120px;
+    width: 720px;        
+    background-image: url(image/Back_Top.jpg); 
+}
+
+#dictionary_body {
+    float: left;
+    background-color: white;
+    height: 1080px;
+    width: 720px;
+}
+
+#list_body {
+    float: left;
+    background-color: white;
+    height: 1080px;
+    width: 720px;
+}
+
+#category_body {
+    float: left;
+    background-color: white;
+    height: 1080px;
+    width: 720px;
+}
+
+#search_body {
+    float: left;
+    background-color: white;
+    height: 1080px;
+    width: 720px;
+}
+
+#word_body {
+    float: left;
+    background-color: white;
+    height: 1080px;
+    width: 720px;
+}
+
+#dictionary_data {
+    float: left;
+    background-color: white;
+    height: 1080px;
+    width: 720px;
+}
+
+#quiz_body {
+    float: left;
+    background-color: white;
+    height: 1080px;
+    width: 720px;
+}
+
+.search_window {
+    background-color: white;
+    padding: 10em; 0em; 0em;
+}
+
+footer {
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    width: 720px;
+    bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #222;
+    font-weight: 600;
+    line-height: 1.3em;
+}
+
+h2 {
+    margin-top: 1.3em;
+}
+
+a {
+    color: #0083e8; 
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+samp {
+    /* hide tutorial instructions so they don't show in the browser */
+    display: none;
+}
+
+
+img {
+    background: transparent;
+    border: 10px solid rgba(0, 0, 0, 0.12);
+    padding: 0em 2em 0em;
+    border-radius: 4px;
+    display: block;
+    margin: 1.3em auto;
+    max-width: 95%;
+    -webkit-animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1;
+}
+
+img.left { float:left; }
+img.right { float:right; }
+
+.clear {
+    clear: both; 
+}
+
+@keyframes colorize {
+    0% {
+        -webkit-filter: grayscale(100%);
+    }
+    100% {
+        -webkit-filter: grayscale(0%);
+    }
+}
+
+@-webkit-keyframes colorize {
+    0% {
+        -webkit-filter: grayscale(100%);
+    }
+    100% {
+        -webkit-filter: grayscale(0%);
+    }
+}

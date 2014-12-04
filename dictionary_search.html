@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="dictionary_indexedDB.js"></script>
+    </head>
+    <body onload="app.indexedDB.open()">
+        <div id="head_menu" style="float:left">
+            <a href="index.html" style="float:left">
+                <img src="image/Logo.png" alt="Sign App" width="70px" height="70x" style="border:0">
+            </a>
+            <a href="dictionary.html" style="float:left">
+                <img src="image/Button_Dictionary.png" alt="Dictionary" width="105px" height="47px" style="border:0">
+            </a>
+            <a href="quiz.html" style="float:left">
+                <img src="image/Button_Quiz.png" alt="Quiz" width="105px" height="47px" style="border:0">
+            </a>
+        </div>
+        <div class="search_window" style="float:left">
+            <input type="search" name="dictionary" id="search_window" value="Search for signs ..." size="50" maxlength="30" autofocus style="float:left">
+            <a href="dictionary_search.html" style="float:left">
+                <img src="image/Magnifier.png" alt="search" width="20px" height="20px" style="padding: 0em 0em 0em; border:0">
+            </a>
+        </div>
+        <div id="search_body">
+            <input type="button" value="Get search result" onclick="app.indexedDB.searchWord();">
+            <p>Search Result</p><hr>
+            <table id="searchWord" width="400px"></table>
+            <a href="dictionary_word.html">Apple</a>
+        </div>
+    </body>
+    <footer>
+        <p>Copyright © 2015 CCDS (Center for Comunication and Deaf Studies)</p>
+    </footer>
+</html>
