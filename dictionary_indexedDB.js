@@ -16,10 +16,11 @@ app.indexedDB.open = function () {
 
     openRequest.onupgradeneeded = function (e) {
         try {
-//                        alert("onupgradeneeded in initial");
+//            alert("onupgradeneeded in initial");
             app.indexedDB.db = e.target.result;
 
             var store = app.indexedDB.db.createObjectStore("dictionary_data", { keyPath: "name", autoIncrement: true });
+//            alert(store);
             store.createIndex("name", "name", { unique: true });
             store.createIndex("initial", "initial", { unique: false });
             store.createIndex("lexical_category", "lexical_category", { unique: false, autoIncrement: true });
@@ -28,8 +29,8 @@ app.indexedDB.open = function () {
             store.createIndex("handshape", "handshape", { unique: false, autoIncrement: true });
             store.createIndex("related_word0", "related_word0", { unique: false, autoIncrement: true });
             store.createIndex("related_word1", "related_word1", { unique: false, autoIncrement: true });
-//            store.createIndex("picture", "picture", { unique: true, autoIncrement: true });
-//            store.createIndex("movie", "movie", { unique: true, autoIncrement: true });
+            store.createIndex("picture", "picture", { unique: true, autoIncrement: true });
+            store.createIndex("movie", "movie", { unique: true, autoIncrement: true });
                         
             e.target.transaction.oncomplete = function () {
                 app.indexedDB.createList();
@@ -66,14 +67,16 @@ app.indexedDB.createList = function () {
     var db = app.indexedDB.db;
     var trans = db.transaction("dictionary_data", "readwrite");
     var store = trans.objectStore("dictionary_data");
-//                alert("createList");
-                
+                    
     var cursorRequest = store.openCursor();
-                
+    
     cursorRequest.onsuccess = function (e) {
-        var cur = e.target.result;
+        console.log(e.target);
+        console.log(e.target.result);
+        var cur = e.target.result;        
         if (!cur) { return; }
         var val = cur.value;
+//        alert(val);
         var tr = document.createElement("tr");
         var td0 = document.createElement("td0");
         td0.innerHTML = val.name;
@@ -95,42 +98,26 @@ app.indexedDB.createList = function () {
 // Adding data from .json file
 app.indexedDB.addData_from_file = function () {
     var httpObj = new XMLHttpRequest();
-    httpObj.open("get", "dictionary_data/dictionary_data.json", true);
+    httpObj.open("get", "dictionary_data/dictionary_data.json", true);    
     httpObj.send(null);
     
-    httpObj.onload = function (){
-        var db = app.indexedDB.db;
-        var trans = db.transaction("dictionary_data", "readwrite");
-        var store = trans.objectStore("dictionary_data");
-        var i;
-        var data = JSON.parse(this.responseText);
-        for (i = 0; i < data.length; i++) {
-            store.put(data[i]);
+    httpObj.onreadystatechange = function () {
+        if (httpObj.readyState == 4 && httpObj.status == 200)
+        {
+            var db = app.indexedDB.db;
+            var trans = db.transaction("dictionary_data", "readwrite");
+            var store = trans.objectStore("dictionary_data");
+            var i;
+            var data = JSON.parse(httpObj.responseText);
+            var data1 = [{name: "Apple", initial: "A", lexical_category: "Noun", category: "Fruits", location: "Face", handshape: "A_handshape", related_word0: "Orange", Related_word1: "Red", picture: "dictionary_data/pictures/Apple.jpg", movie: "dictionary_data/movies/Apple.mp4"},
+                         {name: "Apple2", initial: "A", lexical_category: "Noun", category: "Fruits", location: "Face", handshape: "A_handshape", related_word0: "Orange", Related_word1: "Red", picture: "dictionary_data/pictures/Apple2.jpg", movie: "dictionary_data/movies/Apple2.mp4"},
+                         {name: "Baby", initial: "B", lexical_category: "Noun", category: "People", location: "Face", handshape: "A_handshape", related_word0: "Child", Related_word1: "Kid", picture: "dictionary_data/pictures/Baby.jpg", movie: "dictionary_data/movies/Baby.mp4"}];
+            for(i = 0; i < data1.length; i++){
+                console.log(i);
+                store.put(data1[i]);
+            }
+            app.indexedDB.createList();
         }
-    };
-};
-
-app.indexedDB.getWord = function () {
-    var wordName = document.getElementById("wordName");
-    var wordLexicalCategory = document.getElementById("wordLexicalCategory");
-    var wordCategory = document.getElementById("wordCategory");
-    var db = app.indexedDB.db;
-    var trans = db.transaction("dictionary_data", "readwrite");
-    var store = trans.objectStore("dictionary_data");
-//    var index = store.index("name");
-    var cursorRequest = store.get("Apple");
-    
-    cursorRequest.onsuccess = function () {
-        var result = this.result;
-        var wname = document.createElement("wname");
-        var wlexicalcategory = document.createElement("wlexicalcategory");
-        var wcategory = document.createElement("wcategory");
-        wname.innerHTML = result.name;
-        wlexicalcategory.innerHTML = result.lexical_category;
-        wcategory.innerHTML = result.category;
-        wordName.appendChild(wname);
-        wordLexicalCategory.appendChild(wlexicalcategory);
-        wordCategory.appendChild(wcategory);
     };
 };
 
@@ -145,12 +132,12 @@ app.indexedDB.getList = function (INITIAL) {
     
     var ini = document.createElement("ini");
     ini.innerHTML = INITIAL;
-    wordInitial.appendChild(ini);
+    wordInitial.appendChild(ini);    
     
     for (i = wordList.childNodes.length - 1; i >= 0; i--) {
         wordList.removeChild(wordList.childNodes[i]);
     }
-        
+    
     var IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.mozIDBKeyRange;
     var db = app.indexedDB.db;
     var trans = db.transaction("dictionary_data", "readwrite");
@@ -174,33 +161,31 @@ app.indexedDB.getList = function (INITIAL) {
 };
 
 app.indexedDB.searchWord = function () {
-    var searchWindow = document.getElementById("searchWindow");
+    var SEARCHWORD = document.search.SEARCHWORD.value;
     var searchWord = document.getElementById("searchWord");
     var i;
-        
+    
     for (i = searchWord.childNodes.length - 1; i >= 0; i--) {
         searchWord.removeChild(wordList.childNodes[i]);
     }
     
-    var search = "Apple";
-    alert(search);
     var IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.mozIDBKeyRange;
     var db = app.indexedDB.db;
     var trans = db.transaction("dictionary_data", "readwrite");
     var store = trans.objectStore("dictionary_data");
     var range = IDBKeyRange.bound("A", "Z");
     var cursorRequest = store.index("name").openCursor(range);
-        
+
     cursorRequest.onsuccess = function (e) {
         var cursor = this.result;
         
         if (cursor) {
             var val = cursor.value;
             var str = val.name + " ";
-            if (str.indexOf(search + " ") !== -1) {
+            if (str.indexOf(SEARCHWORD + " ") !== -1) {
                 var tr = document.createElement("tr");
                 var td0 = document.createElement("td0");
-                td0.innerHTML = val.name;
+                td0.innerHTML = val.name;   
                 tr.appendChild(td0);
                 searchWord.appendChild(tr);
             }
@@ -209,21 +194,60 @@ app.indexedDB.searchWord = function () {
     };
 };
 
+app.indexedDB.getWord = function (WORD) {
+    var wordName = document.getElementById("wordName");
+    var wordLexicalCategory = document.getElementById("wordLexicalCategory");
+    var wordCategory = document.getElementById("wordCategory");
+//    var wordPicture = document.getElementById("wordPicture");
+//    var wordMovie = document.getElementById("wordMovie");
+    var db = app.indexedDB.db;
+    var trans = db.transaction("dictionary_data", "readwrite");
+    var store = trans.objectStore("dictionary_data");
+    var cursorRequest = store.get(WORD);
+    
+    cursorRequest.onsuccess = function () {
+        var result = this.result;
+        var wname = document.createElement("wname");
+        var wlexicalcategory = document.createElement("wlexicalcategory");
+        var wcategory = document.createElement("wcategory");
+//        var wpicture = document.createElement("wpicture");
+//        var wmovie = document.createElement("wmovie");
+        wname.innerHTML = result.name;
+        wlexicalcategory.innerHTML = result.lexical_category;
+        wcategory.innerHTML = result.category;
+//        wpicture.innerHTML = result.picture;
+//        wmovie.innerHTML = result.movie;
+        wordName.appendChild(wname);
+        wordLexicalCategory.appendChild(wlexicalcategory);
+        wordCategory.appendChild(wcategory);
+        alert(result.picture);
+//        document.getElementById("wordPicture").src = "dictionary_data/pictures/Apple.jp";
+        document.getElementById("wordPicture").src = result.picture;
+        document.getElementById("wordMovie").src = result.movie;
+//        wordPicture.appendChild(wpicture);
+//        wordMovie.appendChild(wmovie);
+    };
+};
 
 
 function initial() {
-/*
+
     if (indexedDB.open("DictionaryDatabase")) {
-        alert("Delete database");
+//        alert("Delete database");
         indexedDB.deleteDatabase("DictionaryDatabase");
     }
-*/    
+    
     app.indexedDB.open();
-    app.indexedDB.addData_from_file();
-    app.indexedDB.createList();
+//    app.indexedDB.addData_from_file();
+//    app.indexedDB.createList();
 }
 
 function getWord() {
     app.indexedDB.open();
 //    app.indexedDB.getWord();
+}
+
+function getList() {
+    app.indexedDB.open();
+    app.indexedDB.getList("A");
 }

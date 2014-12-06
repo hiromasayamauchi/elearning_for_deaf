@@ -1,4 +1,5 @@
 [
-    {"name": "Apple", "initial": "A", "lexical_category": "Noun", "category": "Fruits", "location": "Face", "handshape": "A_handshape", "related_word0": "Orange", "Related_word1": "Red"},
-    {"name": "Baby", "initial": "B", "lexical_category": "Noun", "category": "People", "location": "Face", "handshape": "A_handshape", "related_word0": "Child", "related_word1": "Kid"}
+    {"name": "Apple", "initial": "A", "lexical_category": "Noun", "category": "Fruits", "location": "Face", "handshape": "A_handshape", "related_word0": "Orange", "Related_word1": "Red", "picture": "dictionary_data/pictures/Apple.jpg", "movie": "dictionary_data/movies/Apple.mp4" },
+    {"name": "Apple2", "initial": "A", "lexical_category": "Noun", "category": "Fruits", "location": "Face", "handshape": "A_handshape", "related_word0": "Orange", "Related_word1": "Red", "picture": "dictionary_data/pictures/Apple.jpg", "movie": "dictionary_data/movies/Apple.mp4" },
+    {"name": "Baby", "initial": "B", "lexical_category": "Noun", "category": "People", "location": "Face", "handshape": "A_handshape", "related_word0": "Child", "related_word1": "Kid", "picture": "dictionary_data/pictures/Baby.jpg", "movie": "dictionary_data/movies/Baby.mp4"}
 ]

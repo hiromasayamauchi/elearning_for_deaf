@@ -22,18 +22,20 @@
             </a>
         </div>
         <div id="dictionary_body">
-            <div class="search_window">
-                <input type="search" name="dictionary" id="search_window" value="Search for signs ..." size="50" maxlength="30" autofocus style="float:left">
-                <a href="dictionary_search.html" style="float:left">
-                    <img src="image/Magnifier.png" alt="search" width="20px" height="20px" style="padding: 0em 0em 0em; border:0">
-                </a>
+            <div>
+             <form method="get" action="dictionary_search.html" name="search" onsubmit="app.indexedDB.searchWord()">
+                <input type="search" name="dictionary" id="SEARCHWORD" placeholder="Search for signs ..." size="50" maxlength="30" autofocus>
+                <input type="image" value="search" src="image/Magnifier.png" alt="Search" width="20px" height="20px" >
+            </form>
             </div>
 <!--
             <img src="image/Search_by_category.png" alt="Search by category" class="left" width="210px" height="50px" style="border:0">
--->            
-            <a href="dictionary_list.html" onclick='app.indexedDB.getList("A");'>
-                <img src="image/Search_by_list.png" alt="Search by list" class="right" width="210px" height="50px" style="border:0">
-            </a>
+-->         
+            <div>
+                <a href="dictionary_list.html" style="float:left">
+                    <img src="image/Search_by_list.png" alt="Search by list" class="right" width="210px" height="50px" style="border:0">
+                </a>
+            </div>
         </div>
     </body>
     <footer>

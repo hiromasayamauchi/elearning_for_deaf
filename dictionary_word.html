@@ -21,16 +21,11 @@
             </a>
         </div>
         <div id="word_body">
-            <div id="word_picture" style="float:left">
-                <img src="dictionary_data/pictures/Apple.jpg" alt="Apple" width="200px" height="150x" style="border:0">
-            </div>
-            <div id="word_movie" style="float: left">
-                <video src="dictionary_data/movies/Apple.mp4" alt="Apple" width="200px" height="150x" style="float: right; border:0" controls></video>
-            </div>
+            <input type="button" value="Get word" style="float:left" onclick="app.indexedDB.getWord('Apple');">
+            <div style="clear:both"></div>
+            <img id = "wordPicture" src = " " alt="Apple" width="200px" height="150x" style="float:left; border:0">
+            <video id = "wordMovie" src = " " alt="Apple" width="200px" height="150x" style="float: left; border:0" controls></video>
             <div id="word_definition" style="clear:both">
-
-                <input type="button" value="Get word" onclick="app.indexedDB.getWord();">
-
                 <ul>
                     <li>Name: <span id="wordName"></span></li>
                     <li>Lexical category:<span id="wordLexicalCategory"></span></li>

@@ -21,16 +21,15 @@
                 <img src="image/Button_Quiz.png" alt="Quiz" width="105px" height="47px" style="border:0">
             </a>
         </div>
-        <div class="search_window" style="float:left">
-            <input type="search" name="dictionary" id="search_window" value="Search for signs ..." size="50" maxlength="30" autofocus style="float:left">
-            <a href="dictionary_search.html" style="float:left">
-                <img src="image/Magnifier.png" alt="search" width="20px" height="20px" style="padding: 0em 0em 0em; border:0">
-            </a>
-        </div>
-        <div id="search_body">
-            <input type="button" value="Get search result" onclick="app.indexedDB.searchWord();">
+        <div style="float:left">
+            <form method="get" action="#" name="search" onsubmit="app.indexedDB.searchWord()">
+                <input type="search" name="dictionary" id="SEARCHWORD" placeholder="Search for signs ..." size="50" maxlength="30" autofocus>
+                <input type="image" value="search" src="image/Magnifier.png" alt="Search" width="20px" height="20px" >
+            </form>
             <p>Search Result</p><hr>
             <table id="searchWord" width="400px"></table>
+        </div>
+        <div style="clear:both">
             <a href="dictionary_word.html">Apple</a>
         </div>
     </body>
