@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>GETTING STARTED WITH BRACKETS</title>
+        <title>Sign APP</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
         <link rel="stylesheet" href="main.css">
         <script type="text/javascript" src="dictionary_indexedDB.js"></script>
@@ -18,17 +18,17 @@
                 <img src="image/Button_Quiz.png" alt="Quiz" class="right" width="210px" height="94px" style=" border:0">
             </a>
         </div>
-        <div stype="float:left">
+        <div style="clear:both">
             <div>
-                <p>Load dictionary data from .json file</p>
-                <input type="button" value="Add from file" onclick="app.indexedDB.addData_from_file();">
-            </div>
-            <div>
-                <p>*Displaying data</p>
-                <input type="button" value="Display" onclick="app.indexedDB.createList();">
-            <div>
-                <p>Index DB Sample.</p>
+                <p>Load dictionary data </p>
+                <input type="button" value="Database generation" onclick="app.indexedDB.addData_from_file();">
+<!-- This table is used in debug for indexedDB
                 <table id="datas" width="400px"></table>
+-->
+                <br/>
+                <br/>
+                <u>If you don't get message "Database generated" after clicking this button,<br/>
+                    please reload and click this button again.</u>
             </div>
         </div>
     </body>

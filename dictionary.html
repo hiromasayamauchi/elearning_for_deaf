@@ -4,9 +4,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>GETTING STARTED WITH BRACKETS</title>
+        <title>Dictionary in Sign APP</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
         <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="jquery-2.1.1.js"></script>
         <script type="text/javascript" src="dictionary_indexedDB.js"></script>
     </head>
     <body onload="app.indexedDB.open();">
@@ -21,20 +22,20 @@
                 <img src="image/Button_Quiz.png" alt="Quiz" width="105px" height="47px" style="border:0">
             </a>
         </div>
-        <div id="dictionary_body">
+        <div id="dictionary_body" style='clear:both'>
             <div>
-             <form method="get" action="dictionary_search.html" name="search" onsubmit="app.indexedDB.searchWord()">
-                <input type="search" name="dictionary" id="SEARCHWORD" placeholder="Search for signs ..." size="50" maxlength="30" autofocus>
-                <input type="image" value="search" src="image/Magnifier.png" alt="Search" width="20px" height="20px" >
-            </form>
+                <form method="get" action="#" name="search" onsubmit='app.indexedDB.searchWord(); return false;'>
+                    <input type="search" name="dictionary" id="SEARCHWORD" placeholder="Search for signs ..." size="50" maxlength="30" autofocus>
+                    <input type="image" value="search" src="image/Magnifier.png" alt="Search" width="20px" height="20px" >
+                </form>
             </div>
-<!--
-            <img src="image/Search_by_category.png" alt="Search by category" class="left" width="210px" height="50px" style="border:0">
--->         
-            <div>
+            <div style="height:100px">
                 <a href="dictionary_list.html" style="float:left">
                     <img src="image/Search_by_list.png" alt="Search by list" class="right" width="210px" height="50px" style="border:0">
                 </a>
+            </div>
+            <div>
+                <table id="searchWord" width="400px"style="text-decoration:underline"></table>
             </div>
         </div>
     </body>

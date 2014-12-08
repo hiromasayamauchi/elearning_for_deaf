@@ -4,12 +4,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>GETTING STARTED WITH BRACKETS</title>
+        <title>Dictionary List in Sign App</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
         <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="jquery-2.1.1.js"></script>
         <script type="text/javascript" src="dictionary_indexedDB.js"></script>
     </head>
-    <body onload="app.indexedDB.open()">
+    <body onload="app.indexedDB.getList('A')">
         <div id="head_menu">
             <a href="index.html" style="float:left">
                 <img src="image/Logo.png" alt="Sign App" width="70px" height="70x" style="border:0">
@@ -21,17 +22,9 @@
                 <img src="image/Button_Quiz.png" alt="Quiz" width="105px" height="47px" style="border:0">
             </a>
         </div>
-        <div id="list_body">
-<!--
-            <input type="button" value="Get list" onclick="app.indexedDB.getList();">
--->
+        <div  id="dictionary_body" style='clear:both'>
             <h1><span id='wordInitial'></span></h1>
-            <table id="wordList" width="400px"></table>
-<!--
-            <br/>
-            <a href="dictionary_word.html">Apple</a>
-            <hr/>
--->
+            <table id="wordList"  style="text-decoration:underline"></table>
             <hr/>
             <u id = 'a' onclick = 'app.indexedDB.getList("A");'>A</u>
             <u id = 'b' onclick = 'app.indexedDB.getList("B");'>B</u>

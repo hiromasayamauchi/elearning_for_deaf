@@ -4,8 +4,7 @@ html {
 
 body {
     margin: 0 auto;
-    padding: 2em 0em 4em 0em;
-    height: 1280px;
+    height: 1080px;
     width: 720px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -20,57 +19,13 @@ body {
 #head_menu {
     background: transparent;
     float: left;
-    height: 120px;
+    height: 108px;
     width: 720px;        
-    background-image: url(image/Back_Top.jpg); 
 }
 
 #dictionary_body {
-    float: left;
-    background-color: white;
-    height: 1080px;
-    width: 720px;
-}
-
-#list_body {
-    float: left;
-    background-color: white;
-    height: 1080px;
-    width: 720px;
-}
-
-#category_body {
-    float: left;
-    background-color: white;
-    height: 1080px;
-    width: 720px;
-}
-
-#search_body {
-    float: left;
-    background-color: white;
-    height: 1080px;
-    width: 720px;
-}
-
-#word_body {
-    float: left;
-    background-color: white;
-    height: 1080px;
-    width: 720px;
-}
-
-#dictionary_data {
-    float: left;
-    background-color: white;
-    height: 1080px;
-    width: 720px;
-}
-
-#quiz_body {
-    float: left;
-    background-color: white;
-    height: 1080px;
+    background: white;
+    height: 832px;
     width: 720px;
 }
 
