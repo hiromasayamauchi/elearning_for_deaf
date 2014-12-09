@@ -1,4 +1,4 @@
-[
+var dictionaryData = [
     {"name": "Apple", "initial": "A", "lexical_category": "Noun", "category": "Fruits", "location": "Face", "handshape": "A_handshape", "related_word0": "Orange", "related_word1": "Red", "picture": "dictionary_data/pictures/Apple.jpg", "movie": "dictionary_data/movies/Apple.mp4" },
     {"name": "Apple2", "initial": "A", "lexical_category": "Noun", "category": "Fruits", "location": "Face", "handshape": "A_handshape", "related_word0": "Orange", "related_word1": "Red", "picture": "dictionary_data/pictures/Apple2.jpg", "movie": "dictionary_data/movies/Apple2.mp4" },
     {"name": "Baby", "initial": "B", "lexical_category": "Noun", "category": "People", "location": "Face", "handshape": "A_handshape", "related_word0": "Child", "related_word1": "Parent", "picture": "dictionary_data/pictures/Baby.jpg", "movie": "dictionary_data/movies/Baby.mp4"},
@@ -8,4 +8,4 @@
     {"name": "Parent", "initial": "P", "lexical_category": "Noun", "category": "People", "location": "Face", "handshape": "A_handshape", "related_word0": "Child", "related_word1": "Baby", "picture": "dictionary_data/pictures/Parent.jpg", "movie": "dictionary_data/movies/Parent.mp4"},
     {"name": "Red", "initial": "R", "lexical_category": "Adjective", "category": "Colour", "location": "Face", "handshape": "A_handshape", "related_word0": "Yellow", "related_word1": "Apple", "picture": "dictionary_data/pictures/Red.jpg", "movie": "dictionary_data/movies/Red.mp4" },
     {"name": "Yellow", "initial": "Y", "lexical_category": "Adjective", "category": "Fruits", "location": "Face", "handshape": "A_handshape", "related_word0": "Red", "related_word1": "Banana", "picture": "dictionary_data/pictures/Yellow.jpg", "movie": "dictionary_data/movies/Yellow.mp4" }
-]
+];

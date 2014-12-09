@@ -84,50 +84,14 @@ app.indexedDB.createList = function () {
 };
 
 // Adding data from .json file
-app.indexedDB.addData_from_file = function (evt) {
-/*
-    var httpObj = new XMLHttpRequest();
-    httpObj.open("get", "./dictionary_data/dictionary_data.json", true);    
-    httpObj.send(null);
-    
-    httpObj.onreadystatechange = function () {
-        if (httpObj.readyState == 4 && httpObj.status == 200)
-        {
-            var data = JSON.parse(httpObj.responseText);
-            var i;
-            var db = app.indexedDB.db;
-
-            for(i = 0; i < data.length; i++){
-                var trans = db.transaction("dictionary_data", "readwrite");
-                var store = trans.objectStore("dictionary_data");
-                store.put(data[i]);
-            }
-// Debug for indexedDB
-//            app.indexedDB.createList();
-            
-            alert('Database generated');
-
-        }
-    };
-*/
-   
-    var data = [{name: "Apple", initial: "A", lexical_category: "Noun", category: "Fruits", location: "Face", handshape: "A_handshape", related_word0: "Orange", related_word1: "Red", picture: "dictionary_data/pictures/Apple.jpg", movie: "dictionary_data/movies/Apple.mp4" },
-    {name: "Apple2", initial: "A", lexical_category: "Noun", category: "Fruits", location: "Face", handshape: "A_handshape", related_word0: "Orange", related_word1: "Red", picture: "dictionary_data/pictures/Apple2.jpg", movie: "dictionary_data/movies/Apple2.mp4" },
-    {name: "Baby", initial: "B", lexical_category: "Noun", category: "People", location: "Face", handshape: "A_handshape", related_word0: "Child", related_word1: "Parent", picture: "dictionary_data/pictures/Baby.jpg", movie: "dictionary_data/movies/Baby.mp4"},
-    {name: "Banana", initial: "B", lexical_category: "Noun", category: "Fruits", location: "Face", handshape: "A_handshape", related_word0: "Apple", related_word1: "Yellow", picture: "dictionary_data/pictures/Banana.jpg", movie: "dictionary_data/movies/Banana.mp4" },
-    {name: "Child", initial: "C", lexical_category: "Noun", category: "People", location: "Face", handshape: "A_handshape", related_word0: "Baby", related_word1: "Parent", picture: "dictionary_data/pictures/Child.jpg", movie: "dictionary_data/movies/Child.mp4"},
-    {name: "Orange", initial: "O", lexical_category: "Noun, Adjective", category: "Fruits", location: "Face", handshape: "A_handshape", related_word0: "Banana", related_word1: "Red", picture: "dictionary_data/pictures/Orange.jpg", movie: "dictionary_data/movies/Orange.mp4" },
-    {name: "Parent", initial: "P", lexical_category: "Noun", category: "People", location: "Face", handshape: "A_handshape", related_word0: "Child", related_word1: "Baby", picture: "dictionary_data/pictures/Parent.jpg", movie: "dictionary_data/movies/Parent.mp4"},
-    {name: "Red", initial: "R", lexical_category: "Adjective", category: "Colour", location: "Face", handshape: "A_handshape", related_word0: "Yellow", related_word1: "Apple", picture: "dictionary_data/pictures/Red.jpg", movie: "dictionary_data/movies/Red.mp4" },
-    {name: "Yellow", initial: "Y", lexical_category: "Adjective", category: "Fruits", location: "Face", handshape: "A_handshape", related_word0: "Red", related_word1: "Banana", picture: "dictionary_data/pictures/Yellow.jpg", movie: "dictionary_data/movies/Yellow.mp4" }]
-  
+app.indexedDB.addData_from_file = function () {
     var i;
     var db = app.indexedDB.db;
 
-    for(i = 0; i < data.length; i++){
+    for(i = 0; i < dictionaryData.length; i++){
         var trans = db.transaction("dictionary_data", "readwrite");
         var store = trans.objectStore("dictionary_data");
-        store.put(data[i]);
+        store.put(dictionaryData[i]);
     }
 // Debug for indexedDB
 //            app.indexedDB.createList();            
