@@ -10,9 +10,8 @@ if (indexedDB) {
 
 app.indexedDB.open = function () {
                 
-    var version = 1;
+    var version = 2;
     var openRequest = indexedDB.open("DictionaryDatabase", version);
-
 
     openRequest.onupgradeneeded = function (e) {
         try {
@@ -101,7 +100,7 @@ app.indexedDB.addData_from_file = function () {
 };
 
 app.indexedDB.getList = function (INITIAL) {
-    var version = 1;
+    var version = 2;
     var openRequest = indexedDB.open("DictionaryDatabase", version);
 
     openRequest.onsuccess = function (e) {
@@ -191,7 +190,7 @@ function putLinkOnTable (){
 };
 
 app.indexedDB.getWord = function (WORD) {
-    var version = 1;
+    var version = 2;
     var openRequest = indexedDB.open("DictionaryDatabase", version);
 
     openRequest.onsuccess = function (e) {
@@ -256,11 +255,11 @@ function putLinkOnRelatedWord (){
 };
 
 function initialize() {
-
-    if (indexedDB.open("DictionaryDatabase")) {
+/*
+    if (indexedDB.open("DictionaryDatabase", 1)) {
 //        console.log("Delete database");
         indexedDB.deleteDatabase("DictionaryDatabase");
     }
-
+*/    
     app.indexedDB.open();
 }
